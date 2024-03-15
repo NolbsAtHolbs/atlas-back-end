@@ -13,7 +13,7 @@ if __name__ == "__main__":
     EmployeeName = requests.get(APIURL + "/users/{}".format(sys.argv[1]))
     EmployeeJD = EmployeeName.json()
     ToDos = requests.get(APIURL + "/users/{}/todos".format(sys.argv[1]))
-    ToDosJD = ToDos.json
+    ToDosJD = ToDos.json()
     File = open(FileName, "w")
     CSVF = csv.writer(File)
     for ToDo in ToDos:
