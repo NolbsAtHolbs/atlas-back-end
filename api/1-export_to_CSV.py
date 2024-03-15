@@ -16,7 +16,7 @@ if __name__ == "__main__":
     ToDosJD = ToDos.json()
     File = open(FileName, "w")
     CSVF = csv.writer(File)
-    for ToDo in ToDos:
+    for ToDo in ToDosJD:
         CSVF.writerow([
             EmployeeJD["id"],
             EmployeeJD["username"],
