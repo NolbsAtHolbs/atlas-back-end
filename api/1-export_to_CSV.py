@@ -14,3 +14,13 @@ if __name__ == "__main__":
     EmployeeJD = EmployeeName.json()
     ToDoJD = requests.get(APIURL + "/users/{}" + "/todos".format(sys.argv[1]))
     ToDos = ToDoJD.json
+    File = open(FileName, "w")
+    CSVF = csv.writer(File, quoting=csv.QUOTE_ALL)
+    for ToDo in ToDos:
+        CSVF.writerow([
+            EmployeeJD["id"],
+            EmployeeJD["username"],
+            ToDoJD["completed"],
+            ToDoJD["title"]
+            ])
+    File.close()
