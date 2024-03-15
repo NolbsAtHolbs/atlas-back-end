@@ -9,10 +9,10 @@ import sys
 
 
 if __name__ == "__main__":
-    APIURL = 'https://jsonplaceholder.typicode.com/'
+    APIURL = "https://jsonplaceholder.typicode.com/"
     EmployeeName = requests.get(APIURL + '/users/{}'.format(sys.argv[1]))
     EmployeeJD = EmployeeName.json()
-    ToDo_jd = requests.get(APIURL + '/users/{}'.format(sys.argv[1]) + '/todos')
+    ToDo_jd = requests.get(APIURL + "/users/{}".format(sys.argv[1]) + "/todos")
     ToDos = ToDo_jd.json()
     completed = 0
     TotalToDos = 0
