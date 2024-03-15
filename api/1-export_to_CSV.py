@@ -12,7 +12,7 @@ if __name__ == "__main__":
     FileName = "{}.csv".format(sys.argv[1])
     EmployeeName = requests.get(APIURL + "/users/{}".format(sys.argv[1]))
     EmployeeJD = EmployeeName.json()
-    ToDos = requests.get(APIURL + "/users/{}" + "/todos".format(sys.argv[1]))
+    ToDos = requests.get(APIURL + "/users/{}/todos".format(sys.argv[1]))
     ToDosJD = ToDos.json
     File = open(FileName, "w")
     CSVF = csv.writer(File)
