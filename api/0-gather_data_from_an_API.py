@@ -32,5 +32,5 @@ if __name__ == "__main__":
     PrintEmployeeToDones: str = f"Employee {EmployeeName} is done with tasks( \
         {EmployeeToDones}/{EmployeeTotalToDos}):"
     EmployeeToDoneCount.insert(PrintEmployeeToDones)
-    
-    print(*EmployeeToDoneCount, sep = '\n\t')
+
+    print(*EmployeeToDoneCount, sep='\n\t')
