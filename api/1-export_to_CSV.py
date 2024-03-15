@@ -20,6 +20,6 @@ if __name__ == "__main__":
         CSVF.writerow([
             EmployeeJD["id"],
             EmployeeJD["username"],
-            ToDosJD["completed"],
-            ToDosJD["title"]])
+            ToDo["completed"],
+            ToDo["title"]])
     File.close()
