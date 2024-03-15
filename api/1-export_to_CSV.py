@@ -6,8 +6,8 @@ import csv
 import requests
 import sys
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     APIURL = "https://jsonplaceholder.typicode.com/"
     FileName = "{}.csv".format(sys.argv[1])
     EmployeeName = requests.get(APIURL + "/users/{}".format(sys.argv[1]))
@@ -15,11 +15,12 @@ if __name__ == "__main__":
     ToDos = requests.get(APIURL + "/users/{}" + "/todos".format(sys.argv[1]))
     ToDosJD = ToDos.json
     File = open(FileName, "w")
-    CSVF = csv.writer(File, quoting=csv.QUOTE_ALL)
+    CSVF = csv.writer(File)
     for ToDo in ToDos:
         CSVF.writerow([
             EmployeeJD["id"],
             EmployeeJD["username"],
             ToDo["completed"],
-            ToDo["title"]])
+            ToDo["title"]
+            ])
     File.close()
