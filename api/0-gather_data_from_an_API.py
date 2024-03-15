@@ -10,7 +10,7 @@ import sys
 
 if __name__ == "__main__":
     APIURL = "https://jsonplaceholder.typicode.com/"
-    EmployeeID = sys.arg[1]
+    EmployeeID = sys.argv[1]
     EmployeeName = requests.get(APIURL + "users/" + EmployeeID)
     EmployeeJSONDump = EmployeeID.json()
     EmployeeJSONDumpName: str = EmployeeJSONDump.get("name")
