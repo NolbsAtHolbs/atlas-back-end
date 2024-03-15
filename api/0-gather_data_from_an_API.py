@@ -24,8 +24,8 @@ if __name__ == "__main__":
 
     EmployeeToDones = 0
     EmployeeToDoneCount = []
-    for ToDO in EmployeeToDosJSONDump:
-        if ToDO["EmployeeID"] == EmployeeID and ToDO["Done"] is True:
+    for ToDo in EmployeeToDosJSONDump:
+        if ToDo["EmployeeID"] == EmployeeID and ToDo["Done"] is True:
             EmployeeToDones = EmployeeToDones + 1
             EmployeeToDoneCount.append(EmployeeToDos["EmployeeToDoName"])
 
