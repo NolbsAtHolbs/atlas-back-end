@@ -3,3 +3,16 @@
     returns information about his/her TODO list progress"""
 
 import requests
+import json
+from os import sys
+
+
+if __name__ == "__main__":
+    APIURL = "https://jsonplaceholder.typicode.com/"
+    EmployeeID = sys.arg[1]
+    EmployeeName = requests.get(APIURL + "users/" + EmployeeID)
+    EmployeeJSONDump = EmployeeID.json()
+    EmployeeJSONDumpName: str = EmployeeJSONDump.get("name")
+    EmployeeToDos = requests.get(APIURL + "users/" + EmployeeID + "/todos/")
+    EmployeeToDosJSONDump = EmployeeToDos.json()
+    EmployeeTotalToDos = 0
