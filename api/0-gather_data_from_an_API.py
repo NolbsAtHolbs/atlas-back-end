@@ -2,8 +2,8 @@
 """Python script w/ an API that, for a given employee ID,
     returns information about his/her TODO list progress"""
 
-import requests
 import json
+import requests
 from os import sys
 
 
