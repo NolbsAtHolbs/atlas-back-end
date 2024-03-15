@@ -4,7 +4,7 @@
 
 import json
 import requests
-from os import sys
+import sys
 
 
 if __name__ == "__main__":
