@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Python script w/ an API that, for a given employee ID,
     returns information about his/her TODO list progress"""
 
@@ -15,4 +16,21 @@ if __name__ == "__main__":
     EmployeeJSONDumpName: str = EmployeeJSONDump.get("name")
     EmployeeToDos = requests.get(APIURL + "users/" + EmployeeID + "/todos/")
     EmployeeToDosJSONDump = EmployeeToDos.json()
+
     EmployeeTotalToDos = 0
+    for ToDo in EmployeeToDosJSONDump:
+        if ToDo["EmployeeID"] == EmployeeID:
+            EmployeeTotalToDos = EmployeeTotalToDos + 1
+
+    EmployeeToDones = 0
+    EmployeeToDoneCount = []
+    for ToDO in EmployeeToDosJSONDump:
+        if ToDO["EmployeeID"] == EmployeeID and ToDO["Done"] == True:
+            EmployeeToDones = EmployeeToDones + 1
+            EmployeeToDoneCount.append(EmployeeToDos["EmployeeToDoName"])
+
+    PrintEmployeeToDones: str = f"Employee {EmployeeName} is done with tasks(
+        {EmployeeToDones}/{EmployeeTotalToDos}):"
+    EmployeeToDoneCount.insert(PrintEmployeeToDones)
+    
+    print(*EmployeeToDoneCount, sep = '\n\t')
