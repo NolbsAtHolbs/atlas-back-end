@@ -15,7 +15,7 @@ if __name__ == "__main__":
     ToDos = requests.get(APIURL + "/users/{}/todos".format(sys.argv[1]))
     ToDosJD = ToDos.json()
     File = open(FileName, "w")
-    CSVF = csv.writer(File)
+    CSVF = csv.writer(File, quoting=csv.QUOTE_ALL)
     for ToDo in ToDosJD:
         CSVF.writerow([
             EmployeeJD["id"],
