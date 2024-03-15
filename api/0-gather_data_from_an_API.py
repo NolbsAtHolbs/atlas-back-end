@@ -29,7 +29,7 @@ if __name__ == "__main__":
             EmployeeToDones = EmployeeToDones + 1
             EmployeeToDoneCount.append(EmployeeToDos["EmployeeToDoName"])
 
-    PrintEmployeeToDones: str = f"Employee {EmployeeName} is done with tasks(
+    PrintEmployeeToDones: str = f"Employee {EmployeeName} is done with tasks( \
         {EmployeeToDones}/{EmployeeTotalToDos}):"
     EmployeeToDoneCount.insert(PrintEmployeeToDones)
     
