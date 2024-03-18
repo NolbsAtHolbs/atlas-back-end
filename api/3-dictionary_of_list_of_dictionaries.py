@@ -23,5 +23,5 @@ if __name__ == "__main__":
                          "completed": ToDo["completed"]}
             EmployeeJDUpdate[EmployeeJDID].append(TasksData)
         EmployeeDoD.update(EmployeeJDUpdate)
-    with open("FileName.json", "w") as file:
+    with open("todo_all_employees.json", "w") as file:
         file.write(json.dumps(EmployeeDoD))
