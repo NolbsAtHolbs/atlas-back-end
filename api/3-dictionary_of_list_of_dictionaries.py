@@ -11,14 +11,14 @@ if __name__ == "__main__":
     APIURL = "https://jsonplaceholder.typicode.com/"
     EmployeeDoD = {}
     EmployeeName = requests.get(APIURL + "/users/")
-    EmployeeJDs = EmployeeName.json()
-    for Employee in EmployeeJDs:
+    EmployeeJD = EmployeeName.json()
+    for Employee in EmployeeJD:
         EmployeeJDID = "{}".format(Employee["id"])
         EmployeeJDUpdate = {EmployeeJDID: []}
         ToDos = requests.get(APIURL + "/users/" + EmployeeJDID + "/todos")
         ToDosJD = ToDos.json()
         for ToDo in ToDosJD:
-            TasksData = {"username": EmployeeJDs["username"],
+            TasksData = {"username": Employee["username"],
                          "task": ToDo["title"],
                          "completed": ToDo["completed"]}
             EmployeeJDUpdate[EmployeeJDID].append(TasksData)
