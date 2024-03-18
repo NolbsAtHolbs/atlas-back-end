@@ -19,7 +19,7 @@ if __name__ == "__main__":
     for ToDo in ToDosJD:
         TasksData = {"task": ToDo["title"],
                      "completed": ToDo["completed"],
-                     "username": EmployeeJD["name"]}
+                     "username": EmployeeJD["username"]}
         EmployeeJDUpdate[EmployeeJDID].append(TasksData)
         with open(FileName, "w") as file:
             file.write(json.dumps(EmployeeJDUpdate))
