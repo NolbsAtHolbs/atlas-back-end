@@ -22,4 +22,4 @@ if __name__ == "__main__":
                      "username": EmployeeJD["name"]}
         EmployeeJDUpdate[EmployeeJDID].append(TasksData)
         with open(FileName, "w") as file:
-            file.write(json.dump(EmployeeJDUpdate))
+            file.write(json.dumps(EmployeeJDUpdate))
