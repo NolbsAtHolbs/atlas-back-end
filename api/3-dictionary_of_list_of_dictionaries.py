@@ -13,7 +13,7 @@ if __name__ == "__main__":
     EmployeeName = requests.get(APIURL + "/users/{}".format(sys.argv[1]))
     EmployeeJD = EmployeeName.json()
     for Employee in EmployeeJD:
-        EmployeeJDID = "{}".format(Employee["id"])
+        EmployeeJDID = "{}".format(EmployeeJD["id"])
         EmployeeJDUpdate = {EmployeeJDID: []}
         ToDos = requests.get(APIURL + "/users/" + EmployeeJDID + "/todos")
         ToDosJD = ToDos.json()
