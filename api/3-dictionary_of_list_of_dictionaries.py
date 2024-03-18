@@ -15,7 +15,7 @@ if __name__ == "__main__":
     for Employee in EmployeeJD:
         EmployeeJDID = "{}".format(Employee["id"])
         EmployeeJDUpdate = {EmployeeJDID: []}
-        ToDos = requests.get(APIURL + EmployeeJDID)
+        ToDos = requests.get(APIURL + "/users/" + EmployeeJDID + "/todos")
         ToDosJD = ToDos.json()
         for ToDo in ToDosJD:
             TasksData = {"username": EmployeeJD["username"],
@@ -23,5 +23,5 @@ if __name__ == "__main__":
                          "completed": ToDo["completed"]}
             EmployeeJDUpdate[EmployeeJDID].append(TasksData)
         EmployeeDoD.update(EmployeeJDUpdate)
-    with open('todo_all_employees.json', 'w') as file:
+    with open("FileName.json", "w") as file:
         file.write(json.dumps(EmployeeDoD))
